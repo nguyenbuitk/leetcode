@@ -1,5 +1,4 @@
 from typing import List
-
 def search(nums: List[int], target: int) -> int:
     # Tạo danh sách index
     indexes = list(range(len(nums)))

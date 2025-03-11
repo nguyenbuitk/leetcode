@@ -1,10 +1,7 @@
-def is_sublist(lst, sublst):
-    for i in range(len(lst) - len(sublst) + 1):
-        if lst[i:i+len(sublst)] == sublst:
-            return True
-    return False
-
-nums1 = [1]
-nums2 = [3, 4,2,1]
-
-print(is_sublist(nums1, nums2))  # Output: True
+for i in range(55):
+    m1 = (i+100) // 2
+    m2 = i + (100-i)//2
+    print(f"m1: {m1}, m2:{m2}")
+    if m1 != m2:
+        print(f"sfsdf lsjkdm1: {m1}, m2:{m2}")
+        

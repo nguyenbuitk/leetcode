@@ -21,3 +21,17 @@ Output: [3,4]
 2. Scan left and right to find the first and last occurence
 
 **Notes**: Linear scan `O(n)` after binary search make it less optimal than a pure `O(log n)` solution
+
+## Approach 3 - Community 1 
+**[Link solution](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/solutions/14699/clean-iterative-solution-with-two-binary-searches-with-explanation/)**
+1. Using 2 binary search to find the left most and right most target
+    - In case of find left most, if `target == nums[m]` we will store this potential `m` value and move to right with `l = mid + 1`
+    - Do similar to find the right most target
+
+## Approach 4 - Commnuity 2
+**[Link solution](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/solutions/14701/a-very-simple-java-solution-with-only-one-binary-search-algorithm/)**
+1. Define a helper function `findGreaterEqual(nums)` to find the first greater equal than `target`, it not found it will return `len(nums)`
+    - In this function, we will define `l, r = 0, len(nums)` instead of `r = len(nums) - 1`
+2. We will call `findGreaterEqual()` two times
+    - first time call `findGreaterEqual(nums, target)` to find the left most
+    - second time call `findGreaterEqual(nums, target + 1)` to find the right most
