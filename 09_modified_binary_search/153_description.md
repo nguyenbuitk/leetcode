@@ -10,7 +10,20 @@ Given the sorted rotated array `nums` of unique elements, return the minimum ele
 You must write an algorithm that runs in `O(log n)` time.
 
 # Key Idea
-## Approach - Optimize
+**Notes** See the visualize at `33_description.md` for easily understand
+## Approach 1
 **Similar approach to problems 33, 81**
 1. We use `Modified Binary Search` to determine which haft is sorted
 2. After that, calculate the min value of sorted haft and move pointer to the remaining haft
+
+## Approach 2 - Optimize
+1. We don't need to determine which haft is sorted.
+2. We compare the `nums[mid]` to `nums[-1]`
+    - If `>` --> move right `(l = mid + 1)`
+    - If `<` --> move left `(r = mid)`
+
+## Approach 3 - Community
+1. We don't need to determine which haft is sorted.
+2. Before we compare the `nums[mid]` to `nums[0]`, if `nums[left] < nums[right]`, return `nums[left]` (to core the case like `[11,12]`)
+    - If `nums[mid] >= nums[0]` --> move right `(l = mid + 1)`
+    - If `<` --> move left `(r = mid)`

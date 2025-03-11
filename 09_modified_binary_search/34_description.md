@@ -35,3 +35,18 @@ Output: [3,4]
 2. We will call `findGreaterEqual()` two times
     - first time call `findGreaterEqual(nums, target)` to find the left most
     - second time call `findGreaterEqual(nums, target + 1)` to find the right most
+
+**Example**
+```python
+nums = [5,7,7,8,8,10]
+target = 8
+```
+**Step 1: Find `start`**
+- `firstGreaterEqual(nums, 8) → 3`
+- So, `start = 3` (first occurrence of `8`).
+
+**Step 2: Find `end`**
+- `firstGreaterEqual(nums, 9) → 5` (first index where `nums[i] >= 9`).
+- `end = 5 - 1 = 4` (last occurrence of `8`).
+
+**Output:** `[3, 4]`

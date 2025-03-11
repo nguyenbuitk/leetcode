@@ -3,38 +3,15 @@ from typing import List
 def minEatingSpeed(piles: List[int], h: int) -> int:
     # find min k:
     # sum((piles[i] // k) + 1) == h
-
-    
-    average_hour = h // len(piles) # = 2
-    # min banana per hour to eat all of them. Nó phải ăn hết đống ít nhất trong vòng min_k_posible hours, thì may ra mới có cơ hội ăn hết các đống còn lại
-    # => maximum 2 h để ăn hết đống nhỏ nhất (vì các đống còn lại cần nhiều thời gian hơn)
-    # => tính được min_k_posible
-    if min(piles) % average_hour != 0:
-        min_k_posible = (min(piles) // average_hour) + 1
-    else: min_k_posible =  min(piles) // average_hour
-    
-    # tương tự. minimum 2h để ăn hết đống lớn nhất => tính được maximum_k_posible
-    if max(piles) % average_hour != 0:
-        max_k_possible = (max(piles) // average_hour) + 1
-    else: max_k_possible = max(piles) // average_hour
-    
-    for i in range(min_k_posible, max_k_possible+1):
-        print(f"i: {i}, min_k: {min_k_posible}, max_k: {max_k_possible}")
-        total_hour_needed = 0
-        for j in range(len(piles)):
-            if piles[j] % i != 0:
-                total_hour_needed += (piles[j] // i ) + 1
-                print(f"total hour need: {total_hour_needed}")
-
-            else: 
-                total_hour_needed += piles[j] // i
-                print(f"total hour need: {total_hour_needed}")
-        print(f"total hour need: {total_hour_needed}")
-        if total_hour_needed <= h:
-            return i
-    return -1    
-# print(minEatingSpeed([3,6,7,11], 8))
-# print(minEatingSpeed([30,11,23,4,20], 5))
-# print(minEatingSpeed([30,11,23,4,20], 6))
-
-print(minEatingSpeed([2,2], 2))
+    low, high = 1, max(piles)
+    while low < high:
+        mid = (low + high) // 2
+        print(f"low: {low}, high: {high}, mid: {mid}")
+        total_hours = sum((pile + mid - 1)//mid for pile in piles)
+        print(f"total_hour: {total_hours}")
+        if total_hours <= h:
+            high = mid
+        else:
+            low = mid + 1
+    return low
+print(minEatingSpeed([312884470], 968709470))
