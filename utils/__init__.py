@@ -1,2 +1,2 @@
 # 
-from .helpers import print_nums_with_indexes
+from .helpers import print_list_with_indexes

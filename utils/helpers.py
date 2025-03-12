@@ -1,6 +1,6 @@
 from typing import List
 
-def print_nums_with_indexes(nums: List[int]):
+def print_list_with_indexes(nums: List[int]):
     indexes = list(range(len(nums)))
     
     nums_str = " ".join(str(num).rjust(3) for num in nums)
