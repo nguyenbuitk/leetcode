@@ -10,6 +10,10 @@ class Solution:
         graph = {}
         for i in range(n):
             graph[i] = []
+        
+        # the two above line equal
+        # graph = {i: [] for i in range(n)}
+            
         for u, v in edges:
             graph[u].append(v)
             graph[v].append(u)
