@@ -71,27 +71,3 @@ while queue:
             visited.add(neighbor)
             queue.append(neighbor)
 ```
-
-### Helper function
-```python
-def build_graph(adjList: List[List[int]]) -> 'Node':
-    """ Constructs a graph from adjacency list and returns the first nodes """
-    if not adjList:
-        return None
-    nodes = {i + 1: Node(i+1) for i in range(len(adjList))}
-    for i, neighbors in enumerate(adjList):
-        for n in neighbors:
-            node[i+1].neighbors.append(nodes[n])
-    return nodes[1]
-```
-
-
-
-
-
-
-
-
-
-
-
