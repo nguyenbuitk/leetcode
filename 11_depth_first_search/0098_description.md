@@ -28,7 +28,7 @@ Output: false
     - Recursively call `return dfs(node.left, minVal, node.Val) and dfs(node.right, node.val, maxVal)`
 
 ## Approach 2: DFS - Inorder traversal
-1. A valid BST has an inorder traversal that is stricly increaasing
+1. A valid BST has an inorder traversal that is stricly increasing
 2. Use inorder traversal `(Left -> Root -> Right)`
       - Keep track of the last visited value (`preVal`)
       - If the current val is <= `preVal`, return `False`, else continue

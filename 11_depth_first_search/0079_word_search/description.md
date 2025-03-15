@@ -1,19 +1,21 @@
 # Medium
 ## 79. Word Search
-Given an m x n grid of characters board and a string word, return true if word exists in the grid.
-The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
+Given an `m x n` grid of characters board and a string word, return `true` if word exists in the grid.
+The word can be constructed from letters of sequentially adjacent cells, where adjacent `cells` are horizontally or vertically neighboring. The same letter cell may not be used more than once.
 
 Example 1:
 Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"
 Output: true
+![Visualize](../images/word2.jpg)
 
 # Key Idea
-## Approach 1. DFS - Stack-based
+## Approach 1. DFS - Iterative
+### [Script Link](./word_search.py)
 1. Iterate over every cell in the matrix
 2. For each matching starting cell (`board[i][j] == word[0]`)
     - Initialize a `stack` to simulate DFS
     - Use a `visited` set to keep track of explored path
-3. Iteratively explore teh boad
+3. Iteratively explore the boad
     - Push valid moves to the stack
     - If `word[k]` is found in sequence, continue
     - If the path is valid, `backtrack` (pop the stack, remove from `visited`, decrement `k`)
@@ -41,7 +43,8 @@ mR, mL, mU, mD stand for moveRight, moveUP, ...
 | 4️⃣ | `(0,1 - A-left)` | `[((A), [mR, mD]), ((A-left), [])]` | `{(A), (A-left)}` | Move to `(B)` |
 | 5️⃣ | `(0,2 - B)` | `[((A), [mR, mD]), ((A-left), [mD]), ((B), [])]` | `{A, A-left, B}` | word = "AAB" -> return True |
 
-## Approach 2. Optimized DFS with backtracking
+## Approach 2. DFS Recursive
+### [Script Link](./chatgpt.py)
 1. DFS with backtracking:
     - Start searching from each cell `(i, j)`
     - If the character at `board[i][j]` matches the first letter of `word`, initiate a DFS to explore all possible paths

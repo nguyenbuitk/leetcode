@@ -6,6 +6,8 @@ Example 1:
 Input: root = [1,null,2,3]
 Output: [1,3,2]
 
+![image](../images/screenshot-2024-08-29-202743.png)
+
 # Key Idea
 ## Approach 1: DFS
 1. Base Case: If the current node is `None`, return
