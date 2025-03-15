@@ -7,15 +7,10 @@ The right subtree of a node contains only nodes with keys greater than the node'
 Both the left and right subtrees must also be binary search trees.
 
 Example 1:
-```
-      5
-     / \
-    1   7
-       / \
-      3   6
-```
-Input: root = [5,1,4,null,null,3,6]
-Output: false 
+Input: root = [5,1,4,null,null,3,6]\
+Output: false\
+
+!["Visualize](../images/tree1.jpg)
 
 # Key Idea
 ## Visualize noted on draw.io

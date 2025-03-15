@@ -23,6 +23,20 @@ class Solution:
         
         return dfs(root.left, root, True, float('-inf'), root.val) and dfs(root.right, root, False, root.val, float('inf'))
 
+    ############ Optimize solution #########################
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        def dfs(node: TreeNode, minVal, maxVal):
+            if not node:
+                return True
+            # print(f"Current value passed: node: {node.val}, parent: {parent.val}, isLeft: {isLeftofParent}, minVal: {minVal}, maxVal: {maxVal} ")
+            if node.val > maxVal or node.val < minVal:
+                return False
+            
+            
+            return dfs(node.left, minVal, node.val) and dfs(node.right, node.val, maxVal)
+        
+        return dfs(root, float('-inf'), float('inf'))
+
 root = TreeNode(32)
 root.left = TreeNode(26)
 root.right = TreeNode(47)
