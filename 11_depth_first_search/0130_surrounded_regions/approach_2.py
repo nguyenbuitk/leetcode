@@ -4,6 +4,8 @@ class Solution:
     def solve(self, board: List[List[str]]) -> None:
         rows, cols = len(board), len(board[0])
         directions = [(0,1), (0, -1), (1,0), (-1,0)]
+        # helper function to convert 'O' to '#' at the border and all cell adjacent to it
+        # instead of using visited, we can change to cell to '#' to mark it as visited
         def dfs(i, j):
             board[i][j] = '#'
             for dr, dc in directions:

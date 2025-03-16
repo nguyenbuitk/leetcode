@@ -56,3 +56,20 @@ Use a stack to simulate recursion and track `node, current_number`
 
 ## Approach 3 - BFS (queue)
 Use a queue for level_order traversal, track `node, current_number`
+```python
+def sumNumbers(root: TreeNode):
+    if not root:
+        return 0
+    res = 0
+    queue = deque([(root, 0)])
+    while queue:
+        node, preVal = queue.popleft()
+        current_val = preVal*10 + node.val
+        if not node.left and not node.right:
+            res += current_val
+        if node.left:
+            queue.append((node.left, current_val))
+        if node.right:
+            queue.append((node.right, current_val))
+    return res
+```
