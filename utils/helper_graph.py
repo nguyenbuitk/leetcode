@@ -58,6 +58,14 @@ def print_graph(node: Node):
                 queue.append(neighbor)
                 visited.add(neighbor)
 
+def buid_adjlist(n: int, edges: List[List[int]]) -> Dict:
+    graph = {}
+    for i in range(n):
+        graph[i] = []
+    for u, v in edges:
+        graph[u].append(v)
+        graph[v].append(u)
+    return graph
 
 def build_graph(adjList: List[List[int]]) -> 'Node':
     """ Constructs a graph from adjacency list and returns the first nodes """
