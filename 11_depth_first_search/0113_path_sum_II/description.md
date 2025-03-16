@@ -7,7 +7,7 @@ A root-to-leaf path is a path starting from the root and ending at any leaf node
 
 # Key Idea
 ## Approach 1 - DFS Recursive
-### [Script Link](dfs_recursive_self.py)
+### [Script Link](./approach_1.py)
 1. Base case: if `node == None`, return
 2. Recursive case: `dfs(node, path = [])`
     - Add `node.val` to `path`
@@ -15,14 +15,14 @@ A root-to-leaf path is a path starting from the root and ending at any leaf node
     - Recursive explore the left and right node
 
 ## Approach 2 - DFS Iterative - Stack
-### [Script Link](dfs_recursive_self.py)
+### [Script Link](./approach_2.py)
 1. Initialize a stack with `(node, current_path, current_sum)`
 2. Iterate while stack is not emtpy:
     - Pop a node and update path/sum
     - If it's a leaf and sum matches `targetSum`, store the path
 
 ## Approach 3 - BFS
-### [Script Link](bfs.py)
+### [Script Link](./approach_3.py)
 1. Initialize a queue with `(node, path, sum)`
 2. Iterate while the queue is not empty:
     - Dequeue a node and update the path/sum

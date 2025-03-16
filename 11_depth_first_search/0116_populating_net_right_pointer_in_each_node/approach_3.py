@@ -15,7 +15,7 @@ def connect(root: Optional[Node]):
     # Recursive call for left and right subtrees
     connect(root.left)
     connect(root.right)
-    
+    return root
 
 root = Node(1)
 root.left = Node(2, Node(4), Node(5))

@@ -6,13 +6,15 @@ def connect(root: Node) -> Node:
 
     leftmost = root
     while leftmost.left: # check children exits
-        # store the root
+        # Start from the root
         curr = leftmost
+        
         # Iterative current level from root
         while curr:
+            # Process next level
             print(f"\ncurr: {curr.val}, curr.next: {curr.next.val if curr.next else ''}")
             print(f"curr.left.next: {curr.right.val}")
-            
+            # 
             curr.left.next = curr.right
             if curr.next:
                 print(f"curr.right.next: {curr.next.left.val}")
