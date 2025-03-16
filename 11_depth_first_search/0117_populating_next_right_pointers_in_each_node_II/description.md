@@ -27,9 +27,32 @@ Similar to approach 1, problem 0116 [[Link]](../0116_populating_net_right_pointe
 <br />
 
 ## Approach 2 - BFS
-**`O(n) time, O(log(n)) space`**
+**`O(n) time, O(log(n)) space`**\
+Example case to check why we need process root.right first:
+
+![image](../images/Untitled.png)
 <br />
 <br />
+```python
+  if not root:
+      return root
+  def findNext(node):
+      while node:
+          if node.left:
+              return node.left
+          if node.right:
+              return node.right
+          node = node.next
+      return None
+  if root.left:
+      root.left.next = root.right if root.right else findNext(root.next)
+  if root.right:
+      root.right.next = findNext(root.next)
+  self.connect(root.right)  # important
+  self.connect(root.left)
+  return root
+```
+
 
 ## Approach 3 - BFS
 **`O(n) time, O(1) space`**
