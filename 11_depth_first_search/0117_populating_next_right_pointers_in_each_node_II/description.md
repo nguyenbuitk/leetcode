@@ -31,8 +31,6 @@ Similar to approach 1, problem 0116 [[Link]](../0116_populating_net_right_pointe
 Example case to check why we need process root.right first:
 
 ![image](../images/Untitled.png)
-<br />
-<br />
 ```python
   if not root:
       return root

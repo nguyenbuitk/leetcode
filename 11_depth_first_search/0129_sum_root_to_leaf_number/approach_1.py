@@ -18,6 +18,7 @@ def sumNumbers(root: TreeNode):
     
     dfs(root, 0)
     return sum(res)
+
 root = TreeNode(4)
 root.left = TreeNode(9)
 root.right = TreeNode(0)
