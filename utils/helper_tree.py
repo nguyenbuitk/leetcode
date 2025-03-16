@@ -14,6 +14,39 @@ class TreeNode:
         self.left = left
         self.right = right
 
+## Build tree
+def insert_level_order(arr):
+    if not arr:
+        return None
+    
+    from collections import deque
+    root = Node(arr[0])
+    queue = deque([root])
+    i = 1
+
+    while queue and i < len(arr):
+        curr = queue.popleft()
+        
+        # Assign left child
+        if i < len(arr) and arr[i] is not None:
+            curr.left = Node(arr[i])
+            queue.append(curr.left)
+        i += 1
+
+        # Assign right child
+        if i < len(arr) and arr[i] is not None:
+            curr.right = Node(arr[i])
+            queue.append(curr.right)
+        i += 1
+
+    return root
+
+
+# Given list
+# arr = [1,2,3,4,5,None,7,None,None,None,8,None,9]
+arr = [2,1,3,0,7,9,1,2,None,1,0,None,None,8,8,None,None,None,None,7]
+
+
 # Inorder Traversal using DFS
 def inorderTraversal(root: Optional[TreeNode]) -> List[int]:
     res = []

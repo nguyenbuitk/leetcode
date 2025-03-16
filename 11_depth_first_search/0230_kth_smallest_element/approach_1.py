@@ -27,10 +27,10 @@ def kthSmallest(root: TreeNode, k: int):
     dfs(root)
     return result if result is not None else False
 
-root = TreeNode(32)
-root.left = TreeNode(26)
-root.right = TreeNode(47)
-root.left.left = TreeNode(19)
-root.left.left.right = TreeNode(22)
-root.right.right = TreeNode(56)
-print(kthSmallest(root, 2))
+root = TreeNode(5)
+root.left = TreeNode(3)
+root.right = TreeNode(6)
+root.left.left = TreeNode(2)
+root.left.right = TreeNode(4)
+root.left.left.left = TreeNode(1)
+print(kthSmallest(root, 6))
