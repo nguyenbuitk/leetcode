@@ -7,21 +7,17 @@ class TreeNode:
         self.right = right
 
 def rightSideView(root: TreeNode):
-    if not root:
-        return 
     res = []
-    queue = deque([root])
-    while queue:
-        level_size =  len(queue)
-        for i in range(level_size):
-            node = queue.popleft()
-            if node.left:
-                queue.append(node.left)
-            if node.right:
-                queue.append(node.right)
-        res.append(node.val)
-    return res
+    def dfs(curr, res, currDepth):
+        if not curr:
+            return
+        if currDepth == len(res):
+            res.append(curr.val)
+        dfs(curr.right, res, currDepth + 1)
+        dfs(curr.left, res, currDepth + 1)
 
+    dfs(root, res, 0)
+    return res
 root = TreeNode(1)
 root.left = TreeNode(2)
 root.left.left = TreeNode(4)

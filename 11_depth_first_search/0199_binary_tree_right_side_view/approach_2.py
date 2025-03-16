@@ -8,21 +8,20 @@ def rightSideView(root):
     if not root:
         return []
     stack, res = [], []
-    current_level, added_level = -1, -1
-    current_node, level = root, 0
-    while current_node or stack:
-        while current_node:
-            print(f"current node: {current_node.val}")
+    curr, level = root, 0
+    while curr or stack:
+        while curr:
+            print(f"current node: {curr.val}")
             print(f"current level: {level}")
             if level >= len(res):
-                res.append(current_node.val)
-            stack.append((current_node, level))
-            current_node, level = current_node.right, level + 1
+                res.append(curr.val)
+            stack.append((curr, level))
+            curr, level = curr.right, level + 1
 
-        current_node, level = stack.pop()
-        print(f"current node after poped: {current_node.val}")
+        curr, level = stack.pop()
+        print(f"current node after poped: {curr.val}")
         print(f"current level after poped: {level}")
-        current_node, level = current_node.left, level + 1
+        curr, level = curr.left, level + 1
     print(res)
     
 
