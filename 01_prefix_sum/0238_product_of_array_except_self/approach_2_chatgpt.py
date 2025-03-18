@@ -4,12 +4,12 @@ class Solution:
         res = [1]*n
         for i in range(1, n):
             res[i] = res[i-1]* nums[i-1]
-        
+        print(res)
         subfix_product = nums[n-1]
         for i in range(n - 2, -1, -1):
             res[i] = res[i] * subfix_product
             subfix_product *= nums[i]
-        
+        print(res)
     
         return res
         
