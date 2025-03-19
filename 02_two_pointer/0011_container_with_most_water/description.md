@@ -19,3 +19,25 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 # Key Idea
 ## Approach 1 - Brute force
 1. Traverse all posible pair of array height to find the max area
+
+## Approach 2 - Two pointers
+To apply the concept of 
+`1. If a wider window is valid, the narrow of that wider scope is valid`
+`2. If a narrower window is invalid, the wider scope of that narrow scope is invalid`
+
+`Valid` in this problem means `max area of water with vertical line i`. 
+- If a `window [i:j]` has max area of with vertical line `i`. then if we narrow the window to `[i:j-1]`, the area can only remain the same or decrease. then we don't need to consider the window [i:j-1]
+- If a `window [i:j]` don't have max area, then expanding to `[i:j+1]` will not necessarily increase the area
+
+```python
+    def maxArea(self, height):
+        i, j = 0, len(height) - 1
+        water = 0
+        while i < j:
+            water = max(water, (j - i) * min(height[i], height[j]))
+            if height[i] < height[j]:
+                i += 1
+            else:
+                j -= 1
+        return water
+```
