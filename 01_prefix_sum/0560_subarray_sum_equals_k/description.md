@@ -18,6 +18,10 @@ Output: 2
 - So it does not guarantee the rule of two pointer
 
 ## Approach 1 Brute force
+Calculate every posible subarray, if it sum to k, then res += 1
+- Iterate i and j = i + 1 to find all posible subarray
+
+This is not efficient
 
 ## Approach 2 Hash Map + Prefix sum
 
