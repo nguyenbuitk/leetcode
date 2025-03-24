@@ -1,3 +1,5 @@
+# O(n) time, O(n) space
+
 class Solution(object):
   def rotate(self, nums, k):
     """
@@ -5,7 +7,7 @@ class Solution(object):
     :type k: int
     :rtype: None Do not return anything, modify nums in-place instead
     """
-    
+    k = k%len(nums)
     padding = [1] * k
     new_nums = padding + nums
     print(new_nums)
@@ -15,9 +17,10 @@ class Solution(object):
       new_nums[l], new_nums[r] = new_nums[r], new_nums[l]
       r -= 1
       l -= 1
-
+    print("new_nums before cut", new_nums)
+    
     new_nums = new_nums[0:-k]
-    print("new_nums ", new_nums)
+    print("new_nums after cut", new_nums)
     for i in range(len(nums)):
       nums[i] = new_nums[i]
 

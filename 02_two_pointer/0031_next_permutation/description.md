@@ -12,35 +12,28 @@ More formally, if all the permutations of the array are sorted in one container 
 - While the next permutation of arr = [3,2,1] is [1,2,3] because [3,2,1] does not have a lexicographical larger rearrangement.
 Given an array of integers nums, find the next permutation of nums.
 
-The replacement must be in place and use only constant extra memory.
-
+**The replacement must be in place and use only constant extra memory.**
 ```
 Example 1:
 Input: nums = [1,2,3]
 Output: [1,3,2]
-Example 2:
 
+Example 2:
 Input: nums = [3,2,1]
 Output: [1,2,3]
 ```
 
 # Key Idea
-
 ## Example:
 Given the array:
-
 ```
 [3, 2, 5, 4, 1]
 ```
-
 The **next permutation** in **lexicographical order** is:
-
 ```
 [3, 4, 1, 2, 5]
 ```
-
 ---
-
 ### **Step 1: Find the Pivot**
 We start looking from the back:
 - The subarray `[5, 4, 1]` is already in descending order, meaning it has been fully permuted.
@@ -50,7 +43,6 @@ We start looking from the back:
 **Pivot: `2`**
 
 ---
-
 ### **Step 2: Swap the Pivot**
 To get the next permutation in **lexicographical order**, we must swap `2` with the **smallest number greater than `2`** in `[5, 4, 1]`.
 - The numbers in `[5, 4, 1]` that are **greater than `2`** are `{5, 4}`.
