@@ -16,15 +16,6 @@ class Node:
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
         
-def print_list_with_indexes(nums: List[int]):
-    indexes = list(range(len(nums)))
-    
-    nums_str = " ".join(str(num).rjust(3) for num in nums)
-    indexes_str = " ".join(str(i).rjust(3) for i in indexes)
-
-    print(f"Indexes:{indexes_str}")
-    print(f"Nums:   {nums_str}")
-
 
 def print_node(node: Node):
     if not node:
