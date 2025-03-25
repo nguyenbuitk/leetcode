@@ -3,11 +3,10 @@
 
 ## When can we use "Two pointer" or "Sliding windows"
 **When two pointer come into place to help us reduce the total cases we need to consider, such that the corresponding time complexity will reduce too**
+
 This summary is simple
-
-`1. If a wider window is valid, the narrow of that wider scope is valid`
-
-`2. If a narrower window is invalid, the wider scope of that narrow scope is invalid`
+### 1. If a wider window is valid, the narrow of that wider scope is valid
+### 2. If a narrower window is invalid, the wider scope of that narrow scope is invalid
 
 ## Explaination
 
