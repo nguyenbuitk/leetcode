@@ -12,7 +12,8 @@ def print_list_with_indexes(nums: List[int], **pointers: Dict[str,int]):
     # arrow lines
     arrows = [" " * COLUMN_WIDTH] * len(nums)
     for var_name, idx in pointers.items():
-        if 0<= idx <len(nums):
+        # print(f"var_name: {var_name}, idx: {idx}")
+        if 0 <= idx < len(nums):
             arrows[idx] = "  ↑  "
     arrows_str = "".join(arrows)
     
@@ -30,11 +31,13 @@ def print_list_with_indexes(nums: List[int], **pointers: Dict[str,int]):
     names_str = "".join(name.center(COLUMN_WIDTH) for name in names)
     print(f"Indexes:{indexes_str}")
     print(f"Nums:   {nums_str}")
-    print(f"        {arrows_str}")
-    print(f"        {names_str}")
+
+    if not arrows_str.isspace():
+        print(f"        {arrows_str}")
+        print(f"        {names_str}")
     for var, idx in  out_of_range:
         print(f"{var}: {idx} is out of range")
-    print("\n")
+    print("")
     
 
-print_list_with_indexes([5, 10, 300], i =1, j = -1)
+# print_list_with_indexes([5, 10, 300], i =1, j = -1)
