@@ -19,3 +19,12 @@ Output: 1
     - The `left` pointer shrink the window when sum is greater or equal than target
 2. Maintain the windows
     - Maintain the minimal length when iterate the array
+
+### Notes
+The following rules must be satisfied for problems that can be solved using the `sliding windows` method
+1. If a wider window is valid, the narrow of that wider scope is valid
+2. If a narrower window is invalid, the wider scope of that narrow scope is invalid
+
+In this problem, `valid` mean `has sum smaller than target`. Then 2 rules is rewriten as follows:
+1. If a wider window has sum smaller than target, the the narrow window has um smaller than target
+2. If a narroer window has sum smaller than target, the wider scope is not sure has sum larger than target
